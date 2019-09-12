@@ -1,7 +1,15 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet, Image, Dimensions } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Dimensions,
+  TextInput,
+  Platform
+} from "react-native";
 import Animated, { Easing } from "react-native-reanimated";
 import { TapGestureHandler, State } from "react-native-gesture-handler";
+import Svg, { Image, Circle, ClipPath } from "react-native-svg";
 
 const { width, height } = Dimensions.get("window");
 const {
@@ -18,7 +26,8 @@ const {
   timing,
   clockRunning,
   interpolate,
-  extrapolate
+  extrapolate,
+  concat
 } = Animated;
 
 function runTiming(clock, value, dest) {
@@ -69,6 +78,19 @@ class MediBloom extends Component {
           ])
       }
     ]);
+
+    this.onCloseState = event([
+      {
+        nativeEvent: ({ state }) =>
+          block([
+            cond(
+              eq(state, State.END),
+              set(this.buttonOpacity, runTiming(new Clock(), 0, 1))
+            )
+          ])
+      }
+    ]);
+
     this.buttonY = interpolate(this.buttonOpacity, {
       inputRange: [0, 1],
       outputRange: [100, 0]
@@ -78,7 +100,32 @@ class MediBloom extends Component {
 
     this.bgY = interpolate(this.buttonOpacity, {
       inputRange: [0, 1],
-      outputRange: [-height / 3, 0]
+      outputRange: [-height / 3 - 50, 0]
+
+      //  extrapolate: Extrapolate.CLAMP
+    });
+
+    this.textInputZindex = interpolate(this.buttonOpacity, {
+      inputRange: [0, 1],
+      outputRange: [1, -1]
+
+      //  extrapolate: Extrapolate.CLAMP
+    });
+    this.textInputY = interpolate(this.buttonOpacity, {
+      inputRange: [0, 1],
+      outputRange: [0, 100]
+
+      //  extrapolate: Extrapolate.CLAMP
+    });
+    this.textInputOpacity = interpolate(this.buttonOpacity, {
+      inputRange: [0, 1],
+      outputRange: [1, 0]
+
+      //  extrapolate: Extrapolate.CLAMP
+    });
+    this.rotateCross = interpolate(this.buttonOpacity, {
+      inputRange: [0, 1],
+      outputRange: [180, 360]
 
       //  extrapolate: Extrapolate.CLAMP
     });
@@ -99,10 +146,18 @@ class MediBloom extends Component {
             transform: [{ translateY: this.bgY }]
           }}
         >
-          <Image
-            source={require("../assets/bg.jpg")}
-            style={{ flex: 1, height: null, width: null }}
-          />
+          <Svg height={height + 50} width={width}>
+            <ClipPath id="clip">
+              <Circle r={height + 50} cx={width / 2} />
+            </ClipPath>
+            <Image
+              href={require("../assets/bg2.jpg")}
+              width={width}
+              height={height + 50}
+              preserveAspectRatio="xMidYMid slice"
+              clipPath="url(#clip)"
+            />
+          </Svg>
         </Animated.View>
         <View style={{ height: height / 3, justifyContent: "center" }}>
           <TapGestureHandler onHandlerStateChange={this.onStateChange}>
@@ -140,6 +195,43 @@ class MediBloom extends Component {
               SIGN IN with Facebook
             </Text>
           </Animated.View>
+          <Animated.View
+            style={{
+              zIndex: this.textInputZindex,
+              opacity: this.textInputOpacity,
+              transform: [{ translateY: this.textInputY }],
+              height: height / 3,
+              ...StyleSheet.absoluteFill,
+              top: null,
+              justifyContent: "center"
+            }}
+          >
+            <TapGestureHandler onHandlerStateChange={this.onCloseState}>
+              <Animated.View style={styles.closedButton}>
+                <Animated.Text
+                  style={{
+                    fontSize: 15,
+                    transform: [{ rotate: concat(this.rotateCross, "deg") }]
+                  }}
+                >
+                  X
+                </Animated.Text>
+              </Animated.View>
+            </TapGestureHandler>
+            <TextInput
+              placeholder="EMAIL"
+              style={styles.textInput}
+              placeholderTextColor="black"
+            />
+            <TextInput
+              placeholder="PASSWORD"
+              style={styles.textInput}
+              placeholderTextColor="black"
+            />
+            <Animated.View style={styles.button}>
+              <Text style={{ fontSize: 20, fontWeight: "bold" }}>SIGN IN</Text>
+            </Animated.View>
+          </Animated.View>
         </View>
       </View>
     );
@@ -160,6 +252,48 @@ const styles = StyleSheet.create({
     borderRadius: 35,
     alignItems: "center",
     justifyContent: "center",
-    marginVertical: 5
+    marginVertical: 5,
+    ...Platform.select({
+      ios: {
+        shadowOffset: {
+          width: 5,
+          height: 5
+        },
+        shadowColor: "black",
+        shadowOpacity: 0.3
+      },
+      android: { elevation: 2 }
+    })
+  },
+  closedButton: {
+    height: 40,
+    width: 40,
+    backgroundColor: "white",
+    borderRadius: 20,
+    alignItems: "center",
+    justifyContent: "center",
+    position: "absolute",
+    top: -20,
+    left: width / 2 - 20,
+    ...Platform.select({
+      ios: {
+        shadowOffset: {
+          width: 5,
+          height: 5
+        },
+        shadowColor: "black",
+        shadowOpacity: 0.3
+      },
+      android: { elevation: 2 }
+    })
+  },
+  textInput: {
+    height: 50,
+    borderRadius: 25,
+    borderWidth: 0.5,
+    marginHorizontal: 20,
+    paddingLeft: 10,
+    marginVertical: 5,
+    borderColor: "rgba(0,0,0,0.2)"
   }
 });
