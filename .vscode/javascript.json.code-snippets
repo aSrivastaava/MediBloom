@@ -1,0 +1,133 @@
+{
+  // Place your snippets for javascriptreact here. Each snippet is defined under a snippet name and has a prefix, body and
+  // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+  // same ids are connected.
+  // Example:
+  // "Print to console": {
+  // 	"prefix": "log",
+  // 	"body": [
+  // 		"console.log('$1');",
+  // 		"$2"
+  // 	],
+  // 	"description": "Log output to console"
+  // }
+  /*
+	// Place your snippets for JavaScript React here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+    // same ids are connected.
+    
+*/ "React Native Component": {
+    "prefix": "imrnc",
+    "body": [
+      "import React, { Component } from \"react\";",
+      "import { \n\tView,\n\tText,\n\tStyleSheet\n} from \"react-native\";",
+      "\nclass ${1:componentName} extends Component {",
+      "\trender() {",
+      "\t\treturn (",
+      "\t\t\t<View style={styles.container}>",
+      "\t\t\t\t<Text>${1:componentName}</Text>",
+      "\t\t\t</View>",
+      "\t\t);",
+      "\t}",
+      "}",
+      "export default ${1:componentName};",
+      "\nconst styles = StyleSheet.create({",
+      "\tcontainer: {",
+      "\t\tflex: 1,",
+      "\t\talignItems: 'center',",
+      "\t\tjustifyContent: 'center'",
+      "\t}",
+      "});"
+    ],
+    "description": "React Component"
+  },
+  "Create StyleSheet": {
+    "prefix": "imrnss",
+    "body": ["const styles = StyleSheet.create({", "\n$0", "\n});\n"],
+    "description": "Const Styles"
+  },
+  "console.log": {
+    "prefix": "clog",
+    "body": ["console.log(${1:})"],
+    "description": "console.log"
+  },
+  "React Native Pan Responder": {
+    "prefix": "imrnp",
+    "body": [
+      "this.panResponder = PanResponder.create({",
+      "\n\tonMoveShouldSetPanResponder: (evt, gestureState) => true,",
+      "\tonPanResponderGrant: (evt, gestureState) =>{",
+      "\n\t},",
+      "\tonPanResponderMove: (evt, gestureState) => {",
+      "\n\t},",
+      "\tonPanResponderRelease: (evt, gestureState) => {",
+      "\n\t},",
+      "\n})"
+    ],
+    "description": "React Native Pan Responder"
+  },
+  "React Native Functional Component": {
+    "prefix": "imrnfc",
+    "body": [
+      "import React from \"react\";",
+      "import { \n\tView,\n\tText,\n\tStyleSheet\n} from \"react-native\";",
+      "\nconst ${1:componentName} = (props) => (",
+      "\t<View style={styles.container}>",
+      "\t\t<Text>${1:componentName}</Text>",
+      "\t</View>",
+      "\t)",
+      "export default ${1:componentName};",
+      "\nconst styles = StyleSheet.create({",
+      "\tcontainer: {",
+      "\t\tflex: 1,",
+      "\t\talignItems: 'center',",
+      "\t\tjustifyContent: 'center'",
+      "\t}",
+      "});"
+    ],
+    "description": "React Native Functional Component"
+  },
+  "React Native Map Function": {
+    "prefix": "rnmap",
+    "body": [
+      "return ${1:items}.map((item,index)=>{",
+      "\treturn(",
+      "\t\t${2:<View></View>}",
+      ")})"
+    ],
+    "description": "javscript map method"
+  },
+  "React Native Dimensions": {
+    "prefix": "rndime",
+    "body": ["const {width,height} = Dimensions.get('window')"],
+    "description": "Dimensions RN"
+  },
+  "React Native Component Only": {
+    "prefix": "rncomp",
+    "body": [
+      "\nclass ${1:componentName} extends Component{",
+      "\trender(){",
+      "\t\treturn (",
+      "\t\t\t<View style={{flex:1,alignItems:'center',justifyContent:'center'}}>",
+      "\t\t\t\t<Text>${1:componentName}</Text>",
+      "\t\t\t</View>",
+      "\t\t);",
+      "\t}",
+      "}"
+    ],
+    "description": "New React Native Component"
+  },
+  "React Native Functional Component Only": {
+    "prefix": "rnfcomp",
+    "body": [
+      "\nconst ${1:componentName} = (props) => (",
+      "\t<View style={{flex:1,alignItems:'center',justifyContent:'center'}}>",
+      "\t\t<Text>${1:componentName}</Text>",
+      "\t</View>",
+      ")"
+    ],
+    "description": "New React Native Component"
+  }
+}
