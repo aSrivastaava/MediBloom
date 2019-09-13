@@ -1,15 +1,10 @@
 import React, { Component } from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  Dimensions,
-  TextInput,
-  Platform
-} from "react-native";
+import { View, Text, StyleSheet, Dimensions, TextInput } from "react-native";
 import Animated, { Easing } from "react-native-reanimated";
 import { TapGestureHandler, State } from "react-native-gesture-handler";
 import Svg, { Image, Circle, ClipPath } from "react-native-svg";
+
+import styles from "../components/style";
 
 const { width, height } = Dimensions.get("window");
 const {
@@ -229,7 +224,7 @@ class MediBloom extends Component {
               placeholderTextColor="black"
             />
             <Animated.View style={styles.button}>
-              <Text style={{ fontSize: 20, fontWeight: "bold" }}>SIGN IN</Text>
+              <Text style={{ fontSize: 15, fontWeight: "bold" }}>SIGN IN</Text>
             </Animated.View>
           </Animated.View>
         </View>
@@ -238,62 +233,3 @@ class MediBloom extends Component {
   }
 }
 export default MediBloom;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center"
-  },
-  button: {
-    backgroundColor: "white",
-    height: 70,
-    marginHorizontal: 20,
-    borderRadius: 35,
-    alignItems: "center",
-    justifyContent: "center",
-    marginVertical: 5,
-    ...Platform.select({
-      ios: {
-        shadowOffset: {
-          width: 5,
-          height: 5
-        },
-        shadowColor: "black",
-        shadowOpacity: 0.3
-      },
-      android: { elevation: 2 }
-    })
-  },
-  closedButton: {
-    height: 40,
-    width: 40,
-    backgroundColor: "white",
-    borderRadius: 20,
-    alignItems: "center",
-    justifyContent: "center",
-    position: "absolute",
-    top: -20,
-    left: width / 2 - 20,
-    ...Platform.select({
-      ios: {
-        shadowOffset: {
-          width: 5,
-          height: 5
-        },
-        shadowColor: "black",
-        shadowOpacity: 0.3
-      },
-      android: { elevation: 2 }
-    })
-  },
-  textInput: {
-    height: 50,
-    borderRadius: 25,
-    borderWidth: 0.5,
-    marginHorizontal: 20,
-    paddingLeft: 10,
-    marginVertical: 5,
-    borderColor: "rgba(0,0,0,0.2)"
-  }
-});

@@ -24,7 +24,7 @@ class App extends React.Component {
   }
 
   async _loadAssetsAsync() {
-    const imageAssets = cacheImages([require("./assets/bg.jpg")]);
+    const imageAssets = cacheImages([require("./assets/bg2.jpg")]);
 
     await Promise.all([...imageAssets]);
   }
