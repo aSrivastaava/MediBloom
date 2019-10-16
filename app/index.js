@@ -175,7 +175,7 @@ class MediBloom extends Component {
             }}
           >
             <Text style={{ fontSize: 20, fontWeight: "bold", color: "white" }}>
-              SIGN IN with Google Raj
+              SIGN IN with Google
             </Text>
           </Animated.View>
           <Animated.View
