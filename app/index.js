@@ -1,5 +1,14 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet, Dimensions, TextInput } from "react-native";
+import Expo from "expo-facebook";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Dimensions,
+  TextInput,
+  KeyboardAvoidingView
+} from "react-native";
+import "expo-facebook";
 import Animated, { Easing } from "react-native-reanimated";
 import {
   TapGestureHandler,
@@ -149,6 +158,13 @@ class MediBloom extends Component {
     });
   }
 
+  componentDidMount() {
+    firebase.auth().onAuthStateChanged(user => {
+      if (user != null) {
+        console.log(user);
+      }
+    });
+  }
   signUpUser = (email, password) => {
     try {
       if (this.state.email === "" || this.state.password === "") {
@@ -178,10 +194,21 @@ class MediBloom extends Component {
     }
   };
   async loginWithFacebook() {
-    const { type, token } = await Expo.Facebook.loginWithReadPermissionsAsync(
+    const { type, token } = await Expo.logInWithReadPermissionsAsync(
       "371328787130312",
       { permissions: ["public_profile"] }
     );
+
+    if (type == "success") {
+      const credential = firebase.auth.FacebookAuthProvider.credential(token);
+
+      firebase
+        .auth()
+        .signInWithCredential(credential)
+        .catch(error => {
+          console.log(error);
+        });
+    }
   }
 
   render() {
@@ -193,124 +220,117 @@ class MediBloom extends Component {
           justifyContent: "flex-end"
         }}
       >
-        <Animated.View
-          style={{
-            ...StyleSheet.absoluteFill,
-            transform: [{ translateY: this.bgY }]
-          }}
-        >
-          <Svg height={height + 50} width={width}>
-            <ClipPath id="clip">
-              <Circle r={height + 50} cx={width / 2} />
-            </ClipPath>
-            <Image
-              href={require("../assets/bg2.jpg")}
-              width={width}
-              height={height + 50}
-              preserveAspectRatio="xMidYMid slice"
-              clipPath="url(#clip)"
-            />
-          </Svg>
-        </Animated.View>
-        <View style={{ height: height / 3, justifyContent: "center" }}>
-          <TapGestureHandler onHandlerStateChange={this.onStateChange}>
-            <Animated.View
-              style={{
-                ...styles.button,
-                opacity: this.buttonOpacity,
-                transform: [{ translateY: this.buttonY }]
-              }}
-            >
-              <Text style={{ fontSize: 20, fontWeight: "bold" }}>SIGN IN</Text>
-            </Animated.View>
-          </TapGestureHandler>
+        <KeyboardAvoidingView behavior="padding">
           <Animated.View
             style={{
-              ...styles.button,
-              backgroundColor: "#f44336",
-              opacity: this.buttonOpacity,
-              transform: [{ translateY: this.buttonY }]
-            }}
-          >
-            <Text style={{ fontSize: 20, fontWeight: "bold", color: "white" }}>
-              SIGN IN with Google
-            </Text>
-          </Animated.View>
-          <Animated.View
-            style={{
-              ...styles.button,
-              backgroundColor: "#3d5afe",
-              opacity: this.buttonOpacity,
-              transform: [{ translateY: this.buttonY }]
-            }}
-          >
-            <Text style={{ fontSize: 20, fontWeight: "bold", color: "white" }}>
-              SIGN IN with Facebook
-            </Text>
-          </Animated.View>
-          <Animated.View
-            style={{
-              zIndex: this.textInputZindex,
-              opacity: this.textInputOpacity,
-              transform: [{ translateY: this.textInputY }],
-              height: height / 3,
               ...StyleSheet.absoluteFill,
-              top: null,
-              justifyContent: "center"
+              transform: [{ translateY: this.bgY }]
             }}
           >
-            <TapGestureHandler onHandlerStateChange={this.onCloseState}>
-              <Animated.View style={styles.closedButton}>
-                <Animated.Text
-                  style={{
-                    fontSize: 15,
-                    transform: [{ rotate: concat(this.rotateCross, "deg") }]
-                  }}
-                >
-                  X
-                </Animated.Text>
-              </Animated.View>
-            </TapGestureHandler>
-            <TextInput
-              style={styles.textInput}
-              placeholder="EMAIL"
-              placeholderTextColor="black"
-              onChangeText={email => this.setState({ email })}
-            />
-            <TextInput
-              placeholder="PASSWORD"
-              onChangeText={password => this.setState({ password })}
-              style={styles.textInput}
-              placeholderTextColor="black"
-            />
-            <Animated.View style={styles.signButtonContainer}>
-              <TouchableOpacity
-                onPress={() =>
-                  this.loginUser(this.state.email, this.state.password)
-                }
-                style={styles.signButton}
+            <Svg height={height + 50} width={width}>
+              <ClipPath id="clip">
+                <Circle r={height + 50} cx={width / 2} />
+              </ClipPath>
+              <Image
+                href={require("../assets/bg2.jpg")}
+                width={width}
+                height={height + 50}
+                preserveAspectRatio="xMidYMid slice"
+                clipPath="url(#clip)"
+              />
+            </Svg>
+          </Animated.View>
+          <View style={{ height: height, justifyContent: "center" }}>
+            <TapGestureHandler onHandlerStateChange={this.onStateChange}>
+              <Animated.View
+                style={{
+                  ...styles.button,
+                  opacity: this.buttonOpacity,
+                  transform: [{ translateY: this.buttonY }]
+                }}
               >
-                {/* <Animated.View> */}
-                <Text style={{ fontSize: 15, fontWeight: "bold" }}>
+                <Text style={{ fontSize: 20, fontWeight: "bold" }}>
                   SIGN IN
                 </Text>
-                {/* </Animated.View> */}
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.signButton}
-                onPress={() =>
-                  this.signUpUser(this.state.email, this.state.password)
-                }
+              </Animated.View>
+            </TapGestureHandler>
+            {/* <Animated.View> */}
+            <TouchableOpacity
+              style={styles.buttonFB}
+              onPress={() => this.loginWithFacebook()}
+            >
+              <Text
+                style={{ fontSize: 20, fontWeight: "bold", color: "white" }}
               >
-                {/* <Animated.View> */}
-                <Text style={{ fontSize: 15, fontWeight: "bold" }}>
-                  SIGN UP
-                </Text>
-                {/* </Animated.View> */}
-              </TouchableOpacity>
+                SIGN IN with Facebook
+              </Text>
+            </TouchableOpacity>
+            {/* </Animated.View> */}
+            <Animated.View
+              style={{
+                zIndex: this.textInputZindex,
+                opacity: this.textInputOpacity,
+                transform: [{ translateY: this.textInputY }],
+                height: height / 3,
+                ...StyleSheet.absoluteFill,
+                top: null,
+                justifyContent: "center"
+              }}
+            >
+              <TapGestureHandler onHandlerStateChange={this.onCloseState}>
+                <Animated.View style={styles.closedButton}>
+                  <Animated.Text
+                    style={{
+                      fontSize: 15,
+                      transform: [{ rotate: concat(this.rotateCross, "deg") }]
+                    }}
+                  >
+                    X
+                  </Animated.Text>
+                </Animated.View>
+              </TapGestureHandler>
+
+              <TextInput
+                style={styles.textInput}
+                placeholder="EMAIL"
+                placeholderTextColor="black"
+                onChangeText={email => this.setState({ email })}
+              />
+              <TextInput
+                placeholder="PASSWORD"
+                onChangeText={password => this.setState({ password })}
+                style={styles.textInput}
+                placeholderTextColor="black"
+              />
+              <Animated.View style={styles.signButtonContainer}>
+                <TouchableOpacity
+                  onPress={() =>
+                    this.loginUser(this.state.email, this.state.password)
+                  }
+                  style={styles.signButton}
+                >
+                  {/* <Animated.View> */}
+                  <Text style={{ fontSize: 15, fontWeight: "bold" }}>
+                    SIGN IN
+                  </Text>
+                  {/* </Animated.View> */}
+                </TouchableOpacity>
+                <TouchableOpacity
+                  style={styles.signButton}
+                  onPress={() =>
+                    this.signUpUser(this.state.email, this.state.password)
+                  }
+                >
+                  {/* <Animated.View> */}
+                  <Text style={{ fontSize: 15, fontWeight: "bold" }}>
+                    SIGN UP
+                  </Text>
+                  {/* </Animated.View> */}
+                </TouchableOpacity>
+              </Animated.View>
             </Animated.View>
-          </Animated.View>
-        </View>
+          </View>
+        </KeyboardAvoidingView>
       </View>
     );
   }
