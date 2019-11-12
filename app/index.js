@@ -1,10 +1,29 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet, Dimensions, TextInput } from "react-native";
 import Animated, { Easing } from "react-native-reanimated";
-import { TapGestureHandler, State } from "react-native-gesture-handler";
+import {
+  TapGestureHandler,
+  State,
+  TouchableOpacity
+} from "react-native-gesture-handler";
 import Svg, { Image, Circle, ClipPath } from "react-native-svg";
 
 import styles from "../components/style";
+
+import * as firebase from "firebase";
+
+// Initialize Firebase
+const firebaseConfig = {
+  apiKey: "AIzaSyAHgpbKmG3IhW-jrAytQ9RAUsyiFiLmN1c",
+  authDomain: "midbloom-99ce3.firebaseapp.com",
+  databaseURL: "https://midbloom-99ce3.firebaseio.com",
+  projectId: "midbloom-99ce3",
+  storageBucket: "midbloom-99ce3.appspot.com",
+  messagingSenderId: "326031542938",
+  appId: "1:326031542938:web:e9397d4d139fa280be6d23"
+};
+
+firebase.initializeApp(firebaseConfig);
 
 const { width, height } = Dimensions.get("window");
 const {
@@ -61,6 +80,10 @@ function runTiming(clock, value, dest) {
 class MediBloom extends Component {
   constructor() {
     super();
+    this.state = {
+      email: "",
+      password: ""
+    };
     this.buttonOpacity = new Value(1);
     this.onStateChange = event([
       {
@@ -124,6 +147,41 @@ class MediBloom extends Component {
 
       //  extrapolate: Extrapolate.CLAMP
     });
+  }
+
+  signUpUser = (email, password) => {
+    try {
+      if (this.state.email === "" || this.state.password === "") {
+        alert("Email and Password can not be blank.");
+        return;
+      }
+      if (this.state.password.length < 6) {
+        alert("Please Enter atleast 6 character password");
+        return;
+      }
+      firebase.auth().createUserWithEmailAndPassword(email, password);
+    } catch (error) {
+      console.log(error.toString());
+    }
+  };
+
+  loginUser = (email, password) => {
+    try {
+      firebase
+        .auth()
+        .signInWithEmailAndPassword(email, password)
+        .then(function(user) {
+          console.log(user);
+        });
+    } catch (error) {
+      console.log(error.toString());
+    }
+  };
+  async loginWithFacebook() {
+    const { type, token } = await Expo.Facebook.loginWithReadPermissionsAsync(
+      "371328787130312",
+      { permissions: ["public_profile"] }
+    );
   }
 
   render() {
@@ -214,17 +272,42 @@ class MediBloom extends Component {
               </Animated.View>
             </TapGestureHandler>
             <TextInput
-              placeholder="EMAIL"
               style={styles.textInput}
+              placeholder="EMAIL"
               placeholderTextColor="black"
+              onChangeText={email => this.setState({ email })}
             />
             <TextInput
               placeholder="PASSWORD"
+              onChangeText={password => this.setState({ password })}
               style={styles.textInput}
               placeholderTextColor="black"
             />
-            <Animated.View style={styles.button}>
-              <Text style={{ fontSize: 15, fontWeight: "bold" }}>SIGN IN</Text>
+            <Animated.View style={styles.signButtonContainer}>
+              <TouchableOpacity
+                onPress={() =>
+                  this.loginUser(this.state.email, this.state.password)
+                }
+                style={styles.signButton}
+              >
+                {/* <Animated.View> */}
+                <Text style={{ fontSize: 15, fontWeight: "bold" }}>
+                  SIGN IN
+                </Text>
+                {/* </Animated.View> */}
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.signButton}
+                onPress={() =>
+                  this.signUpUser(this.state.email, this.state.password)
+                }
+              >
+                {/* <Animated.View> */}
+                <Text style={{ fontSize: 15, fontWeight: "bold" }}>
+                  SIGN UP
+                </Text>
+                {/* </Animated.View> */}
+              </TouchableOpacity>
             </Animated.View>
           </Animated.View>
         </View>

@@ -7,6 +7,31 @@ export default StyleSheet.create({
     alignItems: "center",
     justifyContent: "center"
   },
+  signButtonContainer: {
+    alignContent: "center",
+    flexDirection: "row"
+  },
+  signButton: {
+    width: width / 2.5,
+    backgroundColor: "white",
+    height: 60,
+    marginHorizontal: 20,
+    borderRadius: 35,
+    alignItems: "center",
+    justifyContent: "center",
+    marginVertical: 5,
+    ...Platform.select({
+      ios: {
+        shadowOffset: {
+          width: 5,
+          height: 5
+        },
+        shadowColor: "black",
+        shadowOpacity: 0.3
+      },
+      android: { elevation: 2 }
+    })
+  },
   button: {
     backgroundColor: "white",
     height: 70,
