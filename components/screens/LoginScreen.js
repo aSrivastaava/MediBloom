@@ -8,7 +8,7 @@ import {
   TextInput,
   KeyboardAvoidingView
 } from "react-native";
-import * as Expo from "expo-facebook";
+// import * as Expo from "expo-facebook";
 import Animated, { Easing } from "react-native-reanimated";
 import {
   TapGestureHandler,
@@ -173,32 +173,31 @@ class LoginScreen extends Component {
         .signInWithEmailAndPassword(email, password)
         .then(function(user) {
           console.log(user);
-          alert("Welcome " + user.user.email);
         });
     } catch (error) {
       console.log(error.toString());
     }
   };
 
-  async loginWithFacebook() {
-    const { type, token } = await Expo.logInWithReadPermissionsAsync(
-      "371328787130312",
-      {
-        permissions: ["public_profile", "email"]
-      }
-    );
+  //   async loginWithFacebook() {
+  //     const { type, token } = await Expo.logInWithReadPermissionsAsync(
+  //       "371328787130312",
+  //       {
+  //         permissions: ["public_profile", "email"]
+  //       }
+  //     );
 
-    if (type == "success") {
-      const credential = firebase.auth.FacebookAuthProvider.credential(token);
+  //     if (type == "success") {
+  //       const credential = firebase.auth.FacebookAuthProvider.credential(token);
 
-      firebase
-        .auth()
-        .signInWithCredential(credential)
-        .catch(error => {
-          console.log(error);
-        });
-    }
-  }
+  //       firebase
+  //         .auth()
+  //         .signInWithCredential(credential)
+  //         .catch(error => {
+  //           console.log(error);
+  //         });
+  //     }
+  //   }
 
   render() {
     return (
@@ -221,7 +220,7 @@ class LoginScreen extends Component {
                 <Circle r={height + 50} cx={width / 2} />
               </ClipPath>
               <Image
-                href={require("../../assets/bg2.jpg")}
+                href={require("../../assets/images/bg2.jpg")}
                 width={width}
                 height={height + 50}
                 preserveAspectRatio="xMidYMid slice"
@@ -244,7 +243,7 @@ class LoginScreen extends Component {
               </Animated.View>
             </TapGestureHandler>
             {/* <Animated.View> */}
-            <TouchableOpacity
+            {/* <TouchableOpacity
               style={styles.buttonFB}
               onPress={() => this.loginWithFacebook()}
             >
@@ -253,7 +252,7 @@ class LoginScreen extends Component {
               >
                 SIGN IN with Facebook
               </Text>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
             {/* </Animated.View> */}
             <Animated.View
               style={{

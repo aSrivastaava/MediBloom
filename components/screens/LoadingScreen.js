@@ -23,7 +23,6 @@ class LoadingScreen extends Component {
     return (
       <View style={styles.container}>
         <ActivityIndicator size="large" />
-        <Text>Please Wait While we setup...</Text>
       </View>
     );
   }

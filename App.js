@@ -1,7 +1,9 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { Asset } from "expo-asset";
-// import MediBloom from "./app/index";
+import { AppLoading } from "expo";
+import * as Font from "expo-font";
+import { Ionicons } from "@expo/vector-icons";
 
 import { createAppContainer, createSwitchNavigator } from "react-navigation";
 import LoadingScreen from "./components/screens/LoadingScreen";
@@ -34,24 +36,35 @@ class App extends React.Component {
   }
 
   async _loadAssetsAsync() {
-    const imageAssets = cacheImages([require("./assets/bg2.jpg")]);
+    const imageAssets = cacheImages([require("./assets/images/bg2.jpg")]);
 
-    await Promise.all([...imageAssets]);
+    await Promise.all([
+      ...imageAssets,
+      Font.loadAsync({
+        // This is the font that we are using for our tab bar
+        ...Ionicons.font,
+        // We include SpaceMono because we use it in HomeScreen.js. Feel free to
+        // remove this if you are not using it in your app
+        "space-mono": require("./assets/fonts/SpaceMono-Regular.ttf"),
+        Roboto: require("native-base/Fonts/Roboto.ttf"),
+        Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf")
+      })
+    ]);
   }
 
   render() {
-    //This if statement checks if the app is ready or not
+    // This if statement checks if the app is ready or not
     // if ready then return the app if not then shows loading.
 
-    // if (!this.state.isReady) {
-    //   return (
-    //     <AppLoading
-    //       startAsync={this._loadAssetsAsync}
-    //       onFinish={() => this.setState({ isReady: true })}
-    //       onError={console.warn}
-    //     />
-    //   );
-    // }
+    if (!this.state.isReady) {
+      return (
+        <AppLoading
+          onFinish={() => this.setState({ isReady: true })}
+          startAsync={this._loadAssetsAsync}
+          onError={console.warn}
+        />
+      );
+    }
     return <AppNavigator />;
   }
 }

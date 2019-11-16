@@ -1,28 +1,11 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet, Button } from "react-native";
-import * as firebase from "firebase";
+import { View, Text, StyleSheet, Button, Alert } from "react-native";
+
+import AppNavigator from "../../navigation/AppNavigator";
 
 class DashboardScreen extends Component {
   render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.textField}>DashboardScreen</Text>
-        <Button
-          title="SignOut"
-          onPress={() => {
-            firebase
-              .auth()
-              .signOut()
-              .then(function() {
-                // Sign-out successful.
-              })
-              .catch(function(error) {
-                // An error happened.
-              });
-          }}
-        />
-      </View>
-    );
+    return <AppNavigator />;
   }
 }
 export default DashboardScreen;
@@ -32,9 +15,5 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center"
-  },
-  textField: {
-    margin: "5%",
-    fontSize: 25
   }
 });
