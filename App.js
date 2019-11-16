@@ -1,8 +1,18 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { Asset } from "expo-asset";
-import { AppLoading } from "expo";
-import MediBloom from "./app/index";
+// import MediBloom from "./app/index";
+
+import { createAppContainer, createSwitchNavigator } from "react-navigation";
+import LoadingScreen from "./components/screens/LoadingScreen";
+import LoginScreen from "./components/screens/LoginScreen";
+import DashboardScreen from "./components/screens/DashboardScreen";
+
+import * as firebase from "firebase";
+import { firebaseConfig } from "./config";
+
+firebase.initializeApp(firebaseConfig);
+
 //Cache Image method
 
 function cacheImages(images) {
@@ -32,20 +42,29 @@ class App extends React.Component {
   render() {
     //This if statement checks if the app is ready or not
     // if ready then return the app if not then shows loading.
-    if (!this.state.isReady) {
-      return (
-        <AppLoading
-          startAsync={this._loadAssetsAsync}
-          onFinish={() => this.setState({ isReady: true })}
-          onError={console.warn}
-        />
-      );
-    }
-    return <MediBloom />;
+
+    // if (!this.state.isReady) {
+    //   return (
+    //     <AppLoading
+    //       startAsync={this._loadAssetsAsync}
+    //       onFinish={() => this.setState({ isReady: true })}
+    //       onError={console.warn}
+    //     />
+    //   );
+    // }
+    return <AppNavigator />;
   }
 }
 
 export default App;
+
+const AppSwitchNavigator = createSwitchNavigator({
+  LoadingScreen: LoadingScreen,
+  LoginScreen: LoginScreen,
+  DashboardScreen: DashboardScreen
+});
+
+const AppNavigator = createAppContainer(AppSwitchNavigator);
 
 const styles = StyleSheet.create({
   container: {

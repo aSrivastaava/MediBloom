@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Expo from "expo-facebook";
+
 import {
   View,
   Text,
@@ -20,6 +21,7 @@ import Svg, { Image, Circle, ClipPath } from "react-native-svg";
 import styles from "../components/style";
 
 import * as firebase from "firebase";
+import homepage from "../components/homepage";
 
 // Initialize Firebase
 const firebaseConfig = {
@@ -158,13 +160,13 @@ class MediBloom extends Component {
     });
   }
 
-  componentDidMount() {
-    firebase.auth().onAuthStateChanged(user => {
-      if (user != null) {
-        console.log(user);
-      }
-    });
-  }
+  // componentDidMount() {
+  //   firebase.auth().onAuthStateChanged(user => {
+  //     if (user != null) {
+  //       console.log(user);
+  //     }
+  //   });
+  // }
   signUpUser = (email, password) => {
     try {
       if (this.state.email === "" || this.state.password === "") {
@@ -188,6 +190,7 @@ class MediBloom extends Component {
         .signInWithEmailAndPassword(email, password)
         .then(function(user) {
           console.log(user);
+          alert("Welcome " + user.user.email);
         });
     } catch (error) {
       console.log(error.toString());
@@ -196,7 +199,9 @@ class MediBloom extends Component {
   async loginWithFacebook() {
     const { type, token } = await Expo.logInWithReadPermissionsAsync(
       "371328787130312",
-      { permissions: ["public_profile"] }
+      {
+        permissions: ["public_profile"]
+      }
     );
 
     if (type == "success") {
