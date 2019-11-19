@@ -12,6 +12,7 @@ import DashboardScreen from "./components/screens/DashboardScreen";
 
 import * as firebase from "firebase";
 import { firebaseConfig } from "./config";
+import searchMed from "./assets/searchMed";
 
 firebase.initializeApp(firebaseConfig);
 
@@ -74,7 +75,8 @@ export default App;
 const AppSwitchNavigator = createSwitchNavigator({
   LoadingScreen: LoadingScreen,
   LoginScreen: LoginScreen,
-  DashboardScreen: DashboardScreen
+  DashboardScreen: DashboardScreen,
+  ToBuyScreen: searchMed
 });
 
 const AppNavigator = createAppContainer(AppSwitchNavigator);

@@ -19,6 +19,9 @@ import Svg, { Image, Circle, ClipPath } from "react-native-svg";
 import * as firebase from "firebase";
 import styles from "../style";
 
+import {Button} from 'native-base'
+
+
 const { width, height } = Dimensions.get("window");
 const {
   Value,
@@ -160,7 +163,9 @@ class LoginScreen extends Component {
         alert("Please Enter atleast 6 character password");
         return;
       }
-      firebase.auth().createUserWithEmailAndPassword(email, password);
+      firebase.auth().createUserWithEmailAndPassword(email, password).catch((e) =>{
+        alert(e)
+      });
     } catch (error) {
       console.log(error.toString());
     }
@@ -171,11 +176,11 @@ class LoginScreen extends Component {
       firebase
         .auth()
         .signInWithEmailAndPassword(email, password)
-        .then(function(user) {
-          console.log(user);
+        .catch((e) =>{
+          alert("No user found: Email/Password Invaild.")
         });
-    } catch (error) {
-      console.log(error.toString());
+    } catch(error) {
+      console.log(error);
     }
   };
 
@@ -237,9 +242,13 @@ class LoginScreen extends Component {
                   transform: [{ translateY: this.buttonY }]
                 }}
               >
-                <Text style={{ fontSize: 20, fontWeight: "bold" }}>
-                  SIGN IN
-                </Text>
+              <Button full
+                    rounded
+                     danger
+                    style={{ width: "90%", alignSelf: "center" }}
+                  >
+                    <Text style={{ color: "white" }}>Welcome to MediBloom!</Text>
+                  </Button>
               </Animated.View>
             </TapGestureHandler>
             {/* <Animated.View> */}
@@ -288,6 +297,7 @@ class LoginScreen extends Component {
                 placeholder="PASSWORD"
                 onChangeText={password => this.setState({ password })}
                 style={styles.textInput}
+                secureTextEntry
                 placeholderTextColor="black"
               />
               <Animated.View style={styles.signButtonContainer}>
@@ -298,9 +308,13 @@ class LoginScreen extends Component {
                   style={styles.signButton}
                 >
                   {/* <Animated.View> */}
-                  <Text style={{ fontSize: 15, fontWeight: "bold" }}>
-                    SIGN IN
-                  </Text>
+                  <Button full
+                    rounded
+                     danger
+                    style={{ width: "90%", alignSelf: "center" }}
+                  >
+                    <Text style={{ color: "white" }}> SIGN IN</Text>
+                  </Button>
                   {/* </Animated.View> */}
                 </TouchableOpacity>
                 <TouchableOpacity
@@ -310,9 +324,13 @@ class LoginScreen extends Component {
                   }
                 >
                   {/* <Animated.View> */}
-                  <Text style={{ fontSize: 15, fontWeight: "bold" }}>
-                    SIGN UP
-                  </Text>
+                  <Button full
+                    rounded
+                     danger
+                    style={{ width: "90%", alignSelf: "center" }}
+                  >
+                    <Text style={{ color: "white" }}> SIGN UP</Text>
+                  </Button>
                   {/* </Animated.View> */}
                 </TouchableOpacity>
               </Animated.View>

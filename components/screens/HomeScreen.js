@@ -7,12 +7,14 @@ import {
   StyleSheet,
   TouchableOpacity,
   View,
-  Text
+  Text,
+  Dimensions
 } from "react-native";
 
 import firebase from "firebase";
 
 import { MonoText } from "../../components/StyledText";
+const { width, height } = Dimensions.get("screen");
 
 export default function HomeScreen() {
   return (
@@ -21,52 +23,52 @@ export default function HomeScreen() {
         style={styles.container}
         contentContainerStyle={styles.contentContainer}
       >
-        <View style={styles.welcomeContainer}>
-          <Image
-            source={
-              __DEV__
-                ? require("../../assets/images/robot-dev.png")
-                : require("../../assets/images/robot-prod.png")
-            }
-            style={styles.welcomeImage}
-          />
-        </View>
 
         <View style={styles.getStartedContainer}>
-          <DevelopmentModeNotice />
 
-          <Text style={styles.getStartedText}>Get started by opening</Text>
+          <Text style={styles.getStartedText}>Few Information about this app:</Text>
 
           <View
             style={[styles.codeHighlightContainer, styles.homeScreenFilename]}
           >
-            <MonoText>screens/HomeScreen.js</MonoText>
+            <MonoText>NearBy | Search Medicine | Setting</MonoText>
           </View>
 
-          <Text style={styles.getStartedText}>
-            Change this text and your app will automatically reload.
-          </Text>
         </View>
 
+        <View style={styles.welcomeContainer}>
+          <Image
+            source={
+              __DEV__
+                ? require("../../assets/images/logo.jpeg")
+                : require("../../assets/images/logo.jpeg")
+            }
+            style={styles.welcomeImage}
+          />
+        </View>
         <View style={styles.helpContainer}>
-          <TouchableOpacity onPress={handleHelpPress} style={styles.helpLink}>
             <Text style={styles.helpLinkText}>
-              Help, it didn’t automatically reload!
+            WELCOME
             </Text>
-          </TouchableOpacity>
+            <Text style={styles.helpLinkText}>
+            TO
+            </Text>
+            <Text style={styles.helpLinkText}>
+            MediBloom
+            </Text>
         </View>
       </ScrollView>
 
       <View style={styles.tabBarInfoContainer}>
         <Text style={styles.tabBarInfoText}>
-          This is a tab bar. You can edit it in:
+        Few info about Future Inhancements:
         </Text>
 
         <View
           style={[styles.codeHighlightContainer, styles.navigationFilename]}
         >
           <MonoText style={styles.codeHighlightText}>
-            navigation/MainTabNavigator.js
+          Medicine Stock Reminder | In-App Shopping...
           </MonoText>
         </View>
       </View>
@@ -77,41 +79,6 @@ export default function HomeScreen() {
 HomeScreen.navigationOptions = {
   header: null
 };
-
-function DevelopmentModeNotice() {
-  if (__DEV__) {
-    const learnMoreButton = (
-      <Text onPress={handleLearnMorePress} style={styles.helpLinkText}>
-        Learn more
-      </Text>
-    );
-
-    return (
-      <Text style={styles.developmentModeText}>
-        Development mode is enabled: your app will be slower but you can use
-        useful development tools. {learnMoreButton}
-      </Text>
-    );
-  } else {
-    return (
-      <Text style={styles.developmentModeText}>
-        You are not in development mode: your app will run at full speed.
-      </Text>
-    );
-  }
-}
-
-function handleLearnMorePress() {
-  WebBrowser.openBrowserAsync(
-    "https://docs.expo.io/versions/latest/workflow/development-mode/"
-  );
-}
-
-function handleHelpPress() {
-  WebBrowser.openBrowserAsync(
-    "https://docs.expo.io/versions/latest/workflow/up-and-running/#cant-see-your-changes"
-  );
-}
 
 const styles = StyleSheet.create({
   container: {
@@ -139,8 +106,8 @@ const styles = StyleSheet.create({
     marginBottom: 20
   },
   welcomeImage: {
-    width: 100,
-    height: 80,
+    width: 360,
+    height: 150,
     resizeMode: "contain",
     marginTop: 3,
     marginLeft: -10
@@ -202,7 +169,8 @@ const styles = StyleSheet.create({
     paddingVertical: 15
   },
   helpLinkText: {
-    fontSize: 14,
+    alignContent:'center',
+    fontSize: 34,
     color: "#2e78b7"
   }
 });

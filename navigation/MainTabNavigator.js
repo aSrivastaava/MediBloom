@@ -7,6 +7,7 @@ import TabBarIcon from "../components/TabBarIcon";
 import HomeScreen from "../components/screens/HomeScreen";
 import NearByScreen from "../components/screens/NearByScreen";
 import SettingsScreen from "../components/screens/SettingsScreen";
+import searchMed from "../assets/searchMed";
 
 const config = Platform.select({
   web: { headerMode: "screen" },
@@ -36,14 +37,14 @@ HomeStack.navigationOptions = {
 
 HomeStack.path = "";
 
-const LinksStack = createStackNavigator(
+const NearByStack = createStackNavigator(
   {
-    Links: NearByScreen
+    NearBy: NearByScreen
   },
   config
 );
 
-LinksStack.navigationOptions = {
+NearByStack.navigationOptions = {
   tabBarLabel: "NearBy",
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
@@ -53,7 +54,26 @@ LinksStack.navigationOptions = {
   )
 };
 
-LinksStack.path = "";
+NearByStack.path = "";
+
+const SearchMedStack = createStackNavigator(
+  {
+    SearchMed: searchMed
+  },
+  config
+);
+
+SearchMedStack.navigationOptions = {
+  tabBarLabel: "Search Medicine",
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={Platform.OS === "ios" ? "ios-search" : "md-search"}
+    />
+  )
+};
+
+SearchMedStack.path = "";
 
 const SettingsStack = createStackNavigator(
   {
@@ -76,10 +96,10 @@ SettingsStack.path = "";
 
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
-  LinksStack,
+  NearByStack,
+  SearchMedStack,
   SettingsStack
 });
-
 tabNavigator.path = "";
 
 export default tabNavigator;

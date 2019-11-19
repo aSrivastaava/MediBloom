@@ -1,0 +1,173 @@
+[
+  {
+    "name": "Trimurti Medical Store",
+    "address": "Sitaram Mala, Loni Kalbhor, Maharashtra 412201",
+    "coords": {
+      "latitude": 18.484453,
+      "longitude": 74.026211
+    },
+    "phoneNumber" : 8598988955, 
+    "img_url": "https://maps.gstatic.com/tactile/pane/default_geocode-2x.png"
+  },
+  {
+    "name": "Sainandan Medical And General Stores",
+    "address": "Mahatma phule Chowk Loni Kalbhor Near Savata Maharaja Mandir Loni Kalbhor Pune, pune, Maharashtra 412201",
+    "coords": {
+      "latitude": 18.487963,
+      "longitude": 74.023389
+    },
+    "phoneNumber" : 8598988955,
+    "img_url": "https://lh5.googleusercontent.com/p/AF1QipM1bal4-p-_MNy3ylnAYHgDZhCbkIIZSQ2Of8J0=w408-h410-k-no"
+  },
+  {
+    "name": "Chintamani Medical",
+    "address": "Loni Kalbhor, Maharashtra 412201",
+    "coords": {
+      "latitude": 18.489537,
+      "longitude": 74.024633
+    },
+    "phoneNumber" : 8598988955,
+    "img_url": "https://maps.gstatic.com/tactile/pane/default_geocode-2x.png"
+  },
+  {
+    "name": "Shreetej Medical Store",
+    "address": "Pathare Wasti, Loni Kalbhor, Maharashtra 412201",
+    "coords": {
+      "latitude": 18.48735,
+      "longitude": 74.019902
+    },
+    "phoneNumber" : 8598988955,
+    "img_url": "https://maps.gstatic.com/tactile/pane/default_geocode-2x.png"
+  },
+  {
+    "name": "Pharmacy 27 Loni",
+    "address": "Vaishnavi clinic, Solapur - Pune Hwy, Kadam Wasti, Loni Kalbhor, Maharashtra 412201",
+    "coords": {
+      "latitude": 18.489385,
+      "longitude": 74.02075
+    },
+    "phoneNumber" : 8598988955,
+    "img_url": "https://lh5.googleusercontent.com/p/AF1QipNIJalI44YRVb8zfkMMD8y1RYn--N65F8uCv3gn=w408-h364-k-no"
+  },
+  {
+    "name": "Pratik Medical & General Store's",
+    "address": "Neharu Chowk, Opp. Jagdish Textile Market, Loni Kalbhor, Tal. Haveli,, Pune, Maharashtra 412201",
+    "coords": {
+      "latitude": 18.483014,
+      "longitude": 74.02652
+    },
+    "phoneNumber" : 8598988955,
+    "img_url": "https://lh5.googleusercontent.com/p/AF1QipMAdeMl7aggnAZv3IuATT25cIVrS1ta8aZvfx5r=w426-h240-k-no"
+  },
+  
+  {
+    "name": "Orange Medicare",
+    "address": "Shop no 2.shivdarshan apts.kadamwak vasti, Loni Kalbhor, 412201",
+    "coords": {
+      "latitude": 18.490437,
+      "longitude": 74.015034
+    },
+    "phoneNumber" : 8598988955,
+    "img_url": "https://maps.gstatic.com/tactile/pane/default_geocode-2x.png"
+  },
+  
+  {
+    "name": "Dwarkadhish Medical And Distributor",
+    "address": "Loni Kalbhor, Maharashtra 412201",
+    "coords": {
+      "latitude": 18.490926,
+      "longitude": 74.023617
+    },
+    "phoneNumber" : 8598988955,
+    "img_url": "https://lh5.googleusercontent.com/p/AF1QipN472jeACaCOZG9WlrCEi3wNWJUcXlNXBvxlZqZ=w426-h240-k-no"
+  },
+  
+  {
+    "name": "n.c.o.f.",
+    "address": "लोणी, Loni Kalbhor, Maharashtra 412201",
+    "coords": {
+      "latitude": 18.488647,
+      "longitude": 74.023446
+    },
+    "phoneNumber" : 8598988955,
+    "img_url": "https://maps.gstatic.com/tactile/pane/default_geocode-2x.png"
+  },
+  
+  {
+    "name": "Sandeep Medical & General Store's",
+    "address": "Kalbhor Complex, Opp. Manohar Cloth Center, Loni-Kalbhor, Tal. Haveli,, Loni Railway Station Rd, Pune, Maharashtra 412201",
+    "coords": {
+      "latitude": 18.490106,
+      "longitude": 74.021214
+    },
+    "phoneNumber" : 8598988955,
+    "img_url": "https://lh5.googleusercontent.com/p/AF1QipPUCWNWSUUfFJMuX2VuLTL19x-lqnaI5ZF8Je1x=w426-h240-k-no"
+  },
+  
+  {
+    "name": "Shree Ganesh Medical Stores",
+    "address": "Solapur - Pune Hwy, Maharashtra 412201",
+    "coords": {
+      "latitude": 18.494299, 
+      "longitude": 73.994030
+    },
+    "phoneNumber" : 8598988955,
+    "img_url": "https://maps.gstatic.com/tactile/pane/default_geocode-2x.png"
+  },
+  
+  {
+    "name": "BHARGAV MEDICAL & GENERAL STORE",
+    "address": "Mumbai Hwy, Maharashtra 412307",
+    "coords": {
+      "latitude": 18.493648, 
+      "longitude": 73.993171
+    },
+    "phoneNumber" : 8598988955,
+    "img_url": "https://maps.gstatic.com/tactile/pane/default_geocode-2x.png"
+  },
+  
+  {
+    "name": "Green Chemists",
+    "address": "Pune, Hadapsar, Maharashtra 412307",
+    "coords": { 
+      "latitude": 18.503463,
+      "longitude": 73.968275
+    },
+    "phoneNumber" : 8598988955,
+    "img_url": "https://lh5.googleusercontent.com/p/AF1QipMbTsDEZvH5MI_ny0ZYNuZK1EPEV7ehs8pLjAsa=w426-h240-k-no"
+  },
+  
+  {
+    "name": "Chandrashekhar Jagdale",
+    "address": "Jayashree Jagdale Marg shiv krupa plot no 10 Sr no 87 behind Suraksha Nagar next to sarthak society opposite Old Mahada colony Hadapsar Pune Maharashtra India, Pin code411028",
+    "coords": {
+      "latitude": 18.471506, 
+      "longitude": 73.990429
+    },
+    "phoneNumber" : 8598988955,
+    "img_url": "https://maps.gstatic.com/tactile/pane/default_geocode-2x.png"
+  },
+  
+  {
+    "name": "Rahul Medical",
+    "address": "Sambhaji Nagar, Loni Kalbhor, Maharashtra 412201",
+    "coords": {
+      "latitude": 18.487012,
+      "longitude": 74.015893
+    },
+    "phoneNumber" : 8598988955,
+    "img_url": "https://maps.gstatic.com/tactile/pane/default_geocode-2x.png"
+  }
+  ,
+  
+  {
+    "name": "Vishwaraj Hosppital",
+    "address": "Solapur Road, Rajbaug, Loni Kalbhor, Pune, Maharashtra 412201",
+    "coords": {
+      "latitude": 18.489705,
+      "longitude": 74.022512
+    },
+    "phoneNumber" : 8598988955,
+    "img_url": "https://lh5.googleusercontent.com/p/AF1QipNpl2Am34CrKfPnJ-gjoFItGx86jAH-5dH3w8N3=w408-h725-k-no"
+  }
+]

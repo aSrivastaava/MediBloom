@@ -1,0 +1,605 @@
+{
+  "stock": [
+    {
+      "term": "Paracetamol",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 12
+
+    },
+    {
+      "term": "Crocin",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 36
+    },
+    {
+      "term": "CROCIN ADVANCE",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 2
+    },
+    {
+      "term": "FLEXON",
+      "avail":"Chintamani Medical",
+      "count": 3
+    },
+    {
+      "term": "Amoxicillin",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 22
+    },
+    {
+      "term": "Fast Relief",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 5
+    },
+    {
+      "term": "Hand Sanitizer",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 16
+    },
+    {
+      "term": "BRUTAFLAM",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 1
+    },
+    {
+      "term": "Omeprazole",
+      "avail":"Chintamani Medical",
+      "count": 10
+    },
+    {
+      "term": "TOREX",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 19
+    },
+    {
+      "term": "CILACAR 5",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 15
+    },
+    {
+      "term": "ENO",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 121
+    },
+    {
+      "term": "VICKS",
+      "avail_2":"Trimurti Medical",
+      "count": 120
+    },
+    {
+      "term": "Fluoxetine",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 119
+    },
+    {
+      "term": "METROGYL",
+      "avail_2":"Trimurti Medical",
+      "count": 117
+    },
+    {
+      "term": "SINAREST",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 117
+    },
+    {
+      "term": "Metronidazole",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 116
+    },
+    {
+      "term": "Potassium Chloride",
+      "avail":"Chintamani Medical",
+      "count": 116
+    },
+    {
+      "term": "Methocarbamol",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 115
+    },
+    {
+      "term": "Prednisone",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 34
+    },
+    {
+      "term": "Amoxicillin and Clavulanate Potassium",
+      "avail":"Chintamani Medical",
+      "count": 33
+    },
+    {
+      "term": "Cyclobenzaprine Hydrochloride",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 33
+    },
+    {
+      "term": "Levetiracetam",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 32
+    },
+    {
+      "term": "Lorazepam",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 32
+    },
+    {
+      "term": "Acetaminophen",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 31
+    },
+    {
+      "term": "Glipizide",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 31
+    },
+    {
+      "term": "Naproxen Sodium",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 111
+    },
+    {
+      "term": "Atenolol",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 110
+    },
+    {
+      "term": "Aspirin",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 109
+    },
+    {
+      "term": "Doxycycline Hyclate",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 109
+    },
+    {
+      "term": "Azithromycin",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 108
+    },
+    {
+      "term": "Acyclovir",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 107
+    },
+    {
+      "term": "Furosemide",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 107
+    },
+    {
+      "term": "Levofloxacin",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 104
+    },
+    {
+      "term": "Ciprofloxacin",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 103
+    },
+    {
+      "term": "Cephalexin",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 102
+    },
+    {
+      "term": "Famotidine",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 102
+    },
+    {
+      "term": "Bupropion Hydrochloride",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 99
+    },
+    {
+      "term": "Naproxen",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 97
+    },
+    {
+      "term": "Pantoprazole Sodium",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 97
+    },
+    {
+      "term": "ATORVASTATIN CALCIUM",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 95
+    },
+    {
+      "term": "Levothyroxine Sodium",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 94
+    },
+    {
+      "term": "Lidocaine",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 94
+    },
+    {
+      "term": "Stool Softener",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 94
+    },
+    {
+      "term": "Sulfamethoxazole and Trimethoprim",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 94
+    },
+    {
+      "term": "Atorvastatin Calcium",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 92
+    },
+    {
+      "term": "Diclofenac Sodium",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 92
+    },
+    {
+      "term": "Lisinopril",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 92
+    },
+    {
+      "term": "Alprazolam",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 91
+    },
+    {
+      "term": "Diazepam",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 89
+    },
+    {
+      "term": "Carvedilol",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 88
+    },
+    {
+      "term": "Clonazepam",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 86
+    },
+    {
+      "term": "Nitrogen",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 86
+    },
+    {
+      "term": "Promethazine Hydrochloride",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 86
+    },
+    {
+      "term": "Phentermine Hydrochloride",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 85
+    },
+    {
+      "term": "Cetirizine Hydrochloride",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 84
+    },
+    {
+      "term": "Olanzapine",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 83
+    },
+    {
+      "term": "Amlodipine Besylate",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 82
+    },
+    {
+      "term": "Fenofibrate",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 82
+    },
+    {
+      "term": "Hydrocodone Bitartrate and Acetaminophen",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 82
+    },
+    {
+      "term": "Hydrocortisone",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 82
+    },
+    {
+      "term": "Sertraline Hydrochloride",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 82
+    },
+    {
+      "term": "Trazodone Hydrochloride",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 82
+    },
+    {
+      "term": "Mirtazapine",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 79
+    },
+    {
+      "term": "Propranolol Hydrochloride",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 77
+    },
+    {
+      "term": "Triamcinolone Acetonide",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 77
+    },
+    {
+      "term": "Buspirone Hydrochloride",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 76
+    },
+    {
+      "term": "Ketorolac Tromethamine",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 76
+    },
+    {
+      "term": "Topiramate",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 76
+    },
+    {
+      "term": "Allopurinol",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 74
+    },
+    {
+      "term": "OXYGEN",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 73
+    },
+    {
+      "term": "Paroxetine",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 73
+    },
+    {
+      "term": "Sildenafil",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 73
+    },
+    {
+      "term": "Loratadine",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 72
+    },
+    {
+      "term": "Fluticasone Propionate",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 71
+    },
+    {
+      "term": "Hydroxyzine Hydrochloride",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 71
+    },
+    {
+      "term": "Miconazole Nitrate",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 70
+    },
+    {
+      "term": "Penicillin V Potassium",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 70
+    },
+    {
+      "term": "Clobetasol Propionate",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 69
+    },
+    {
+      "term": "Divalproex Sodium",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 69
+    },
+    {
+      "term": "Spironolactone",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 69
+    },
+    {
+      "term": "GABAPENTIN",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 67
+    },
+    {
+      "term": "Nifedipine",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 67
+    },
+    {
+      "term": "Warfarin Sodium",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 67
+    },
+    {
+      "term": "Nicotine",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 66
+    },
+    {
+      "term": "LISINOPRIL",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 65
+    },
+    {
+      "term": "Lamotrigine",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 65
+    },
+    {
+      "term": "Hydrogen Peroxide",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 64
+    },
+    {
+      "term": "Nystatin",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 64
+    },
+    {
+      "term": "Fluconazole",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 62
+    },
+    {
+      "term": "Glimepiride",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 62
+    },
+    {
+      "term": "Indomethacin",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 62
+    },
+    {
+      "term": "Diltiazem Hydrochloride",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 61
+    },
+    {
+      "term": "Lovastatin",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 61
+    },
+    {
+      "term": "Tolnaftate",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 61
+    },
+    {
+      "term": "citroma",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 61
+    },
+    {
+      "term": "Finasteride",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 60
+    },
+    {
+      "term": "Gas Relief Extra Strength",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 60
+    },
+    {
+      "term": "Hydralazine Hydrochloride",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 60
+    },
+    {
+      "term": "Baclofen",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 59
+    },
+    {
+      "term": "Cefdinir",
+      "avail":"Chintamani Medical",
+      "avail_2":"Trimurti Medical",
+      "count": 59
+    }
+  ]
+}
