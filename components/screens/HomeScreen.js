@@ -1,89 +1,110 @@
-import * as WebBrowser from "expo-web-browser";
-import React from "react";
+import React, { Component } from "react";
 import {
-  Image,
-  Platform,
-  ScrollView,
-  StyleSheet,
-  TouchableOpacity,
-  View,
-  Text,
-  Dimensions
-} from "react-native";
-
-import firebase from "firebase";
-
+  createStackNavigator
+} from 'react-navigation-stack'
+import {Image,Platform,StyleSheet,TouchableOpacity,View,Text,Dimensions,Button} from "react-native";
 import { MonoText } from "../../components/StyledText";
 const { width, height } = Dimensions.get("screen");
 
-export default function HomeScreen() {
-  return (
-    <View style={styles.container}>
-      <ScrollView
-        style={styles.container}
-        contentContainerStyle={styles.contentContainer}
-      >
-
-        <View style={styles.getStartedContainer}>
-
-          <Text style={styles.getStartedText}>Few Information about this app:</Text>
-
-          <View
-            style={[styles.codeHighlightContainer, styles.homeScreenFilename]}
-          >
-            <MonoText>NearBy | Search Medicine | Setting</MonoText>
-          </View>
-
-        </View>
-
-        <View style={styles.welcomeContainer}>
-          <Image
-            source={
-              __DEV__
-                ? require("../../assets/images/logo.jpeg")
-                : require("../../assets/images/logo.jpeg")
-            }
-            style={styles.welcomeImage}
-          />
-        </View>
-        <View style={styles.helpContainer}>
-            <Text style={styles.helpLinkText}>
-            WELCOME
-            </Text>
-            <Text style={styles.helpLinkText}>
-            TO
-            </Text>
-            <Text style={styles.helpLinkText}>
-            MediBloom
-            </Text>
-        </View>
-      </ScrollView>
-
-      <View style={styles.tabBarInfoContainer}>
-        <Text style={styles.tabBarInfoText}>
-        Few info about Future Inhancements:
+class HomeScreen extends Component {
+ 
+  render() {
+    return (
+      <View style={styles.container}>
+    
+      <View>
+<TouchableOpacity onPress={()=>{this.props.navigation.navigate('PulseScreen')}}
+            style={styles.btn} >
+            <Image source={require("./medicine.png")}
+              style={styles.image} />
+            <Text style={styles.text}>Click Here To Check Pulse</Text>
+</TouchableOpacity>
+      </View>
+      
+        <View style={styles.tabBarInfoContainer}>
+          <Text style={styles.tabBarInfoText}>
+            Search Pharmacy Store from
+                your Phone
         </Text>
 
-        <View
-          style={[styles.codeHighlightContainer, styles.navigationFilename]}
-        >
-          <MonoText style={styles.codeHighlightText}>
-          Medicine Stock Reminder | In-App Shopping...
+          <View
+            style={[styles.codeHighlightContainer, styles.navigationFilename]}
+          >
+            <MonoText style={styles.codeHighlightText}>
+              Check Availabiltiy | Navigation
           </MonoText>
+          </View>
         </View>
       </View>
-    </View>
-  );
+    );
+  }
 }
 
-HomeScreen.navigationOptions = {
-  header: null
-};
+class PulseScreen extends Component{
+  render()
+{
+  return (
+    <View style={styles.container}>
+      <Text style={styles.welcome}>
+        This is Pulse Page 
+      </Text>
+    </View>
+  );
+  }
+}
+  
+export default createStackNavigator({
+  HomeScreen: { screen: HomeScreen },
+  PulseScreen: { screen: PulseScreen }
+})
 
+HomeScreen.navigationOptions = {
+  header: null,
+  headerVisible: false,
+  headerMode: 'none',
+  
+};
+PulseScreen.navigationOptions = {
+  header: null,
+  headerVisible: false,
+};
 const styles = StyleSheet.create({
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+    
+  },
+  image: {
+      width: 300,
+      height: 100,
+    resizeMode: "contain",
+    position: 'absolute',
+
+    },
+
+    text: {
+      fontSize: 18,
+      color: "#6c63ff",
+      fontWeight: "bold",
+      // marginLeft: 45,
+      // marginRight:50,
+      textAlign: "center",
+      marginTop:100
+     
+    },
+    btn: {
+      marginRight: 50,
+      height: 120,
+      width: 300,
+      marginTop: 100,
+      marginLeft: 45,
+     
+
+    },
   container: {
     flex: 1,
-    backgroundColor: "#fff"
+    backgroundColor: "#fff"  
   },
   container2: {
     flex: 1,
@@ -101,8 +122,9 @@ const styles = StyleSheet.create({
     paddingTop: 30
   },
   welcomeContainer: {
-    alignItems: "center",
-    marginTop: 10,
+    marginTop: 200,
+    marginLeft:30,
+    marginRight:30,
     marginBottom: 20
   },
   welcomeImage: {
@@ -110,7 +132,8 @@ const styles = StyleSheet.create({
     height: 150,
     resizeMode: "contain",
     marginTop: 3,
-    marginLeft: -10
+    marginLeft: -10,
+    alignItems:"center"
   },
   getStartedContainer: {
     alignItems: "center",
@@ -170,7 +193,10 @@ const styles = StyleSheet.create({
   },
   helpLinkText: {
     alignContent:'center',
-    fontSize: 34,
-    color: "#2e78b7"
+    fontSize: 44,
+    color: "#6c63ff",
+    fontFamily: "",
+    fontWeight:"bold"
   }
 });
+

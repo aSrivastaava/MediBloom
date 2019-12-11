@@ -3,14 +3,15 @@ import { StyleSheet, Platform, Dimensions } from "react-native";
 const { width, height } = Dimensions.get("window");
 export default StyleSheet.create({
   container: {
-    flex: 1,
+    alignContent:"center",
     alignItems: "center",
+    borderColor: "red",
     justifyContent: "center"
   },
   signButtonContainer: {
     alignContent: "center",
     flexDirection: "row"
-  },
+  },  
   signButton: {
     width: width / 2.5,
     backgroundColor: "white",
@@ -29,7 +30,7 @@ export default StyleSheet.create({
         shadowColor: "black",
         shadowOpacity: 0.3
       },
-      android: { elevation: 2 }
+      android: { elevation: 5 }
     })
   },
   button: {

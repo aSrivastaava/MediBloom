@@ -210,7 +210,7 @@ class LoginScreen extends Component {
         style={{
           flex: 1,
           backgroundColor: "white",
-          justifyContent: "flex-end"
+          justifyContent: "center"
         }}
       >
         <KeyboardAvoidingView behavior="padding">
@@ -220,7 +220,7 @@ class LoginScreen extends Component {
               transform: [{ translateY: this.bgY }]
             }}
           >
-            <Svg height={height + 50} width={width}>
+            <Svg height={height+50} width={width+10}>
               <ClipPath id="clip">
                 <Circle r={height + 50} cx={width / 2} />
               </ClipPath>
@@ -233,7 +233,7 @@ class LoginScreen extends Component {
               />
             </Svg>
           </Animated.View>
-          <View style={{ height: height, justifyContent: "center" }}>
+          <View style={{ height: height , justifyContent: "center" }}>
             <TapGestureHandler onHandlerStateChange={this.onStateChange}>
               <Animated.View
                 style={{
@@ -247,7 +247,7 @@ class LoginScreen extends Component {
                      danger
                     style={{ width: "90%", alignSelf: "center" }}
                   >
-                    <Text style={{ color: "white" }}>Welcome to MediBloom!</Text>
+                    <Text style={{fontSize:20, color: "white" }}>Welcome to MediBloom</Text>
                   </Button>
               </Animated.View>
             </TapGestureHandler>
